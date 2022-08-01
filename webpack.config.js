@@ -16,8 +16,16 @@ module.exports = {
     path: path.resolve(__dirname,'dist'),
 
     // 打包后的文件名
-    filename: "bundle.js"
+    filename: "bundle.js",
+
+    // 告诉 webpack 不使用箭头函数和const
+    // 用来解决 ie 的兼容性问题
+    environment: {
+      arrowFunction: false,
+      const: false
+    }
   },
+
   // 指定 webpack 打包时要使用的模块
   module: {
     // 指定要加载的规则
