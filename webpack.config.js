@@ -6,6 +6,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const loader = require("ts-loader");
 // webpack 中的所有配置信息都应该写在 module.exports中
 module.exports = {
+  // 解决了模块导入的时候路径无法生效的问题
+  resolve: {
+    extensions: ['.ts', '...'],
+  },
   mode: "development",
   // 指定入口文件
   entry: "./src/index.ts",
